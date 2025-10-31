@@ -1,22 +1,30 @@
 {
-  "name": "web-viatges",
+  "name": "pac-plantilla",
   "version": "1.0.0",
-  "private": true,
   "scripts": {
     "dev": "parcel src/index.html --open",
-    "build": "parcel build src/index.html --dist-dir ./dist --public-url ./",
-    "build:all": "parcel build src/*.html --dist-dir ./dist --public-url ./"
+    "build": "parcel build src/index.html --dist-dir dist",
+    "serve": "parcel serve src/index.html",
+    "format": "prettier --write \"src/**/*.js\" \"src/**/*.css\" \"src/**/*.html\""
   },
+  "browserslist": [
+    "defaults",
+    "ie 11",
+    "> 0.5%",
+    "last 2 versions"
+  ],
   "dependencies": {
-    "lazysizes": "^5.3.2"
+    "lazysizes": "^5.3.2",
+    "micromodal": "^0.4.10"
   },
   "devDependencies": {
-    "parcel": "^2.16.0",
-    "sass": "^1.93.2"
-  },
-  "description": "",
-  "main": "index.html",
-  "keywords": [],
-  "author": "baron_bernat <bbaron@uoc.edu>",
-  "license": "ISC"
+    "@babel/core": "^7.20.0",
+    "@babel/preset-env": "^7.20.0",
+    "@parcel/transformer-sass": "^2.16.0",
+    "autoprefixer": "^10.4.0",
+    "core-js": "^3.30.0",
+    "parcel": "^2.9.0",
+    "postcss": "^8.4.0",
+    "sass": "^1.60.0"
+  }
 }
