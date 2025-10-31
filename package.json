@@ -1,0 +1,22 @@
+{
+  "name": "web-viatges",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "parcel src/index.html --open",
+    "build": "parcel build src/index.html --dist-dir ./dist --public-url ./",
+    "build:all": "parcel build src/*.html --dist-dir ./dist --public-url ./"
+  },
+  "dependencies": {
+    "lazysizes": "^5.3.2"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.0",
+    "sass": "^1.93.2"
+  },
+  "description": "",
+  "main": "index.html",
+  "keywords": [],
+  "author": "baron_bernat <bbaron@uoc.edu>",
+  "license": "ISC"
+}

@@ -1,0 +1,7 @@
+node_modules/
+.dist/
+dist/
+.parcel-cache/
+.cache/
+.env
+.DS_Store
