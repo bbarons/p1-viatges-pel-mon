@@ -1,0 +1,2 @@
+# p1-viatges-pel-mon
+Portal web sobre viatges pel món, desenvolupat per a la PAC1 de la assignatura Eines HTML i CSS. El projecte inclou pàgines de portada, categoria, detall i enllaços, creat amb Parcel, SCSS i JavaScript, seguint criteris d’accessibilitat i disseny responsive.
