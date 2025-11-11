@@ -1,25 +1,63 @@
-<!doctype html>
-<html lang="es">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Viatges pel Món — Categoria</title>
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinacions - Viatges pel Món</title>
     <link rel="stylesheet" href="./styles/styles.scss">
-</head>
-<body>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Saltar al contingut</a>
+
     <header>
-
+      <h1>Destinacions</h1>
+      <nav>
+        <ul>
+          <li><a href="./index.html">Inici</a></li>
+          <li><a href="./categoria.html" aria-current="page">Destinacions</a></li>
+          <li><a href="./links.html">Enllaços</a></li>
+        </ul>
+      </nav>
     </header>
-    
-    <main>
 
+    <main id="main">
+      <h2>Destinacions del món</h2>
+      <section class="llistat">
+        <article>
+          <img src="./assets/images/paris.jpg" alt="Imatge de París">
+          <h3>París</h3>
+          <p>Descobreix la ciutat de la llum i la seva cultura.</p>
+          <a class="btn" href="./det1.html">Veure més</a>
+        </article>
+
+        <article>
+          <img src="./assets/images/kyoto.jpg" alt="Imatge de Kioto">
+          <h3>Kioto</h3>
+          <p>Tradició del Japó.</p>
+          <a class="btn" href="./det2.html">Veure més</a>
+        </article>
+      </section>
+
+      <section class="consells">
+        <div class="slide1"></div>
+        <div class="slide2"></div>
+        <div class="slide3"></div>
+        <div class="container">
+          <h3>Consells per als teus viatges</h3>
+          <ul>
+            <li><strong>Planifica amb antelació:</strong> Investiga destinacions i prepara itineraris per aprofitar millor el temps.</li>
+            <li><strong>Pack inteligent:</strong> Porta només el necessari i prepara equipatge versàtil per totes les situacions.</li>
+            <li><strong>Gaudeix del moment:</strong> Captura records, però no oblidis viure l'experiència plena en directe.</li>
+          </ul>
+        </div>
+      </section>
     </main>
 
     <footer>
-
+      <p>&copy; <span id="any-actual"></span> Viatges pel Món | <a href="./links.html">Fonts i atribucions</a></p>
     </footer>
-    <a class="skip-link" href="#main">Saltar al contingut principal</a>
-    <!-- contingut -->
-    <script type="module" src="./js/main.js"></script>
-</body>
+    
+    <!-- Script principal -->
+    <script src="./js/main.js"></script>
+  </body>
 </html>

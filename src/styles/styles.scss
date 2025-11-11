@@ -1,0 +1,613 @@
+/* ==========================================================================
+   VARIABLES DE DISSENY
+   ========================================================================== */
+$color-primari: #001323;
+$color-secundari: #f8ca25;
+$color-fons: #f5f7fa;
+$color-text: #222;
+$color-text-suau: #555;
+$color-footer: #0a2540;
+$color-blanc: #fff;
+
+$font-principal: 'Montserrat', sans-serif;
+$max-width: 1100px;
+
+/* ==========================================================================
+   RESETEIG BÀSIC I ESTIL GLOBAL
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-principal;
+  color: $color-text;
+  background-color: $color-fons;
+  line-height: 1.6;
+  font-size: 16px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Enllaços accessibles */
+a {
+  color: $color-blanc;
+  text-decoration: none;
+  transition: color 0.2s;
+
+  &:hover,
+  &:focus {
+    color: darken($color-blanc, 10%);
+  }
+}
+
+  .linkBlanc{
+    color: $color-secundari;
+
+    &:hover{
+      color: darken($color-secundari, 10%);
+    }
+  }
+
+/* ==========================================================================
+   LAYOUT PRINCIPAL
+   ========================================================================== */
+header {
+  background-color: $color-primari;
+  color: $color-blanc;
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  h1 {
+    text-align: center;
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+
+  nav {
+    margin-top: 0.5rem;
+
+    ul {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      list-style: none;
+
+      a {
+        color: $color-blanc;
+        font-weight: 500;
+        position: relative;
+        padding: 0.25rem 0;
+
+        &:hover::after,
+        &[aria-current="page"]::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -3px;
+          width: 100%;
+          height: 2px;
+          color: lightgrey;
+          background-color: $color-blanc;
+        }
+      }
+    }
+  }
+}
+
+/* ==========================================================================
+   HERO / PORTADA
+   ========================================================================== */
+.hero {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  background: linear-gradient(rgba(0, 0, 0, 0.45),rgba(0, 0, 0, 0.45)),url("../assets/images/portada.jpg") center/cover no-repeat;
+    
+  color: $color-blanc;
+  /* Animació de zoom */
+  animation: zoomAnim 20s ease-in-out infinite alternate;
+
+  h2 {
+    color: $color-blanc;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    max-width: 700px;
+    margin: 0 auto 1.5rem auto;
+    font-size: 1.1rem;
+  }
+
+  .btn {
+    background-color: $color-secundari;
+    color: $color-blanc;
+    padding: 0.8rem 1.6rem;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: darken($color-secundari, 8%);
+    }
+  }
+}
+
+/* ==========================================================================
+   SECCIONS PRINCIPALS
+   ========================================================================== */
+main {
+  flex: 1;
+  max-width: $max-width;
+  width: 90%;
+  margin: 2rem auto;
+
+  h2 {
+    text-align: center;
+    color: $color-primari;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* ==========================================================================
+   LLISTAT DE DESTINACIONS
+   ========================================================================== */
+.llistat {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+
+  article {
+    background-color: $color-blanc;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+    }
+
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    h3 {
+      color: $color-primari;
+      margin: 1rem;
+    }
+
+    p {
+      color: $color-text-suau;
+      margin: 0 1rem 1.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: $color-primari;
+      color: $color-blanc;
+      margin: 0 1rem 1.5rem;
+      padding: 0.6rem 1rem;
+      border-radius: 6px;
+      text-align: center;
+
+      &:hover {
+        background-color: darken($color-primari, 10%);
+      }
+    }
+  }
+}
+
+/* ==========================================================================
+   PÀGINES DE DETALL
+   ========================================================================== */
+article {
+  background-color: $color-blanc;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+
+  .featured {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+  }
+
+  .imatges {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+
+    img {
+      width: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+  }
+
+  .video-wrap {
+    margin-top: 2rem;
+    iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 8px;
+    }
+  }
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+footer {
+  background-color: $color-footer;
+  color: $color-blanc;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+
+  a {
+    color: $color-blanc;
+    font-weight: 500;
+    &:hover {
+      color: lighten($color-secundari, 10%);
+    }
+  }
+}
+
+/* ==========================================================================
+   ACCESSIBILITAT
+   ========================================================================== */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+
+  &:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    background-color: $color-primari;
+    color: $color-blanc;
+    padding: 0.5rem 1rem;
+    z-index: 100;
+  }
+}
+
+/* ==========================================================================
+   LLISTAT DE DESTINACIONS
+   ========================================================================== */
+.featured {
+  margin-top: 3rem;
+
+  h3 {
+    text-align: center;
+    font-size: 2rem;
+    color: $color-primari;
+    margin-bottom: 2rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+
+    article {
+      background-color: $color-blanc;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateY(-4px);
+      }
+
+      img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      h4 {
+        color: $color-primari;
+        margin: 1rem;
+      }
+
+      p {
+        color: $color-text-suau;
+        margin: 0 1rem 1.5rem;
+      }
+
+      .link {
+        display: inline-block;
+        margin: 0 1rem 1rem;
+        color: $color-secundari;
+        font-weight: 600;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+/* ==========================================================================
+   FORMULARI NEWSLETTER
+   ========================================================================== */
+.newsletter {
+  background-color: $color-primari;
+  color: $color-blanc;
+  text-align: center;
+  padding: 3rem 1rem;
+  margin-top: 1rem;
+
+  h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  form {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+
+    input[type='email'] {
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      border: none;
+      flex: 1 1 250px;
+      max-width: 400px;
+    }
+
+    button.btn {
+      padding: 0.5rem 1.5rem;
+      background-color: $color-secundari;
+      color: $color-blanc;
+      border: none;
+      border-radius: 4px;
+      font-weight: 600;
+      cursor: pointer;
+
+      &:hover {
+        background-color: darken($color-secundari, 8%);
+      }
+    }
+  }
+}
+
+/* ==========================================================================
+   SECCIÓ DESTINACIONS
+   ========================================================================== */
+.llistat {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+
+  article {
+    background-color: $color-blanc;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    h3 {
+      color: $color-primari;
+      margin: 1rem;
+      font-size: 1.4rem;
+    }
+
+    p {
+      color: $color-text-suau;
+      margin: 0 1rem 1rem;
+      font-size: 1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: $color-secundari;
+      color: $color-blanc;
+      margin: 0 1rem 1rem;
+      padding: 0.6rem 1rem;
+      border-radius: 6px;
+      font-weight: 600;
+      text-align: center;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: darken($color-secundari, 8%);
+      }
+    }
+  }
+}
+
+.consells {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  padding: 4rem 1.5rem;
+  margin: 3rem 0;
+  text-align: center;
+  color: $color-blanc;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.60),
+      rgba(0, 0, 0, 0.90)
+  );
+
+  &::before,
+  &::after,
+  .slide1,
+  .slide2,
+  .slide3 {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    z-index: -1;
+    opacity: 0;
+    animation: fadeSlide 12s infinite;
+  }
+
+  .slide1 { background-image: url("../assets/images/kyoto-bamboo.jpg"); animation-delay: 0s; opacity: 1; }
+  .slide2 { background-image: url("../assets/images/paris-louvre.jpg"); animation-delay: 4s; }
+  .slide3 { background-image: url("../assets/images/kyoto-temple.jpg"); animation-delay: 8s; }
+
+  &::after {
+    background-color: rgba(0,0,0,0.5);
+    z-index: 0;
+  }
+
+  h3, ul {
+    position: relative;
+    z-index: 1;
+  }
+
+  h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  ul {
+    list-style: none;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0;
+
+    li {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+    }
+  }
+}
+
+/* ==========================================================================
+   BOTO TORNAR AMUNT
+   ========================================================================== */
+
+.scroll-top {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background-color: $color-secundari;
+  color: $color-blanc;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s, transform 0.3s;
+  z-index: 999;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVITAT
+   ========================================================================== */
+@media (max-width: 768px) {
+  header nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .hero {
+    padding: 2rem 1rem;
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+
+  article {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .consells {
+    padding: 3rem 1rem;
+
+    h3 {
+      font-size: 1.6rem;
+    }
+
+    ul li {
+      font-size: 1rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .llistat {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   ANIMACIONS
+   ========================================================================== */
+
+/* Animació de zoom */
+@keyframes zoomAnim {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+/* Keyframes per canvi d’imatges */
+@keyframes fadeSlide {
+  0% { opacity: 0; }
+  8% { opacity: 1; }
+  25% { opacity: 1; }
+  33% { opacity: 0; }
+  100% { opacity: 0; }
+}

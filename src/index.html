@@ -1,25 +1,95 @@
-<!doctype html>
-<html lang="es">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Viatges pel Món — Inici</title>
-    <link rel="stylesheet" href="./styles/styles.scss">
-</head>
-<body>
-    <header>
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Descobreix destinacions increïbles arreu del món. Inspira't, planifica i viu experiències úniques amb Viatges pel Món." />
+    <meta name="author" content="Nom Cognoms" />
+    <title>Viatges pel Món | Descobreix Nous Horitzons</title>
 
+    <!-- Estils -->
+    <link rel="stylesheet" href="./styles/styles.scss" />
+
+  </head>
+  <body>
+    <!-- Enllaç per saltar al contingut principal (accessibilitat) -->
+    <a class="skip-link" href="#main">Saltar al contingut principal</a>
+
+    <!-- Capçalera -->
+    <header class="header">
+      <div class="container">
+        <h1 class="site-title">Viatges pel Món</h1>
+        <nav class="main-nav" aria-label="Navegació principal">
+          <ul>
+            <li><a href="./index.html" aria-current="page">Inici</a></li>
+            <li><a href="./categoria.html">Destinacions</a></li>
+            <li><a href="./links.html">Enllaços</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
-    
-    <main>
 
+    <!-- Contingut principal -->
+    <main id="main">
+      <!-- Hero section -->
+      <section class="hero">
+        <div class="container">
+          <h2>Descobreix el món, una destinació cada vegada</h2>
+          <p>
+            Benvingut a <strong>Viatges pel Món</strong>, el teu portal per inspirar-te i planificar aventures arreu del planeta. 
+            Troba idees, consells i experiències per fer de cada viatge una història inoblidable.
+          </p>
+          <a href="./categoria.html" class="btn btn-primary">Explora destinacions</a>
+        </div>
+      </section>
+
+      <!-- Secció destacada -->
+      <section class="featured">
+        <div class="container">
+          <h3>Destinacions Populars</h3>
+          <div class="grid">
+            <article>
+              <img src="./assets/images/paris.jpg" alt="Vista de la Torre Eiffel a París" />
+              <h4>París, França</h4>
+              <p>La ciutat de la llum t’espera amb el seu art, la seva gastronomia i el seu encant únic.</p>
+              <a href="./det1.html" class="link">Descobreix més →</a>
+            </article>
+
+            <article>
+              <img src="./assets/images/kyoto.jpg" alt="Temple japonès a Kyoto envoltat de natura" />
+              <h4>Kyoto, Japó</h4>
+              <p>Temples antics, jardins zen i tradició mil·lenària et transportaran a una altra època.</p>
+              <a href="./det2.html" class="link">Descobreix més →</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Secció de butlleti -->
+      <section class="newsletter">
+        <div class="container">
+          <h3>Subscriu-te al nostre butlletí</h3>
+          <p>Rep noves destinacions i ofertes exclusives directament al teu correu.</p>
+          <form id="newsletter-form" aria-label="Formulari de subscripció">
+            <label for="email">Correu electrònic:</label>
+            <input type="email" id="email" name="email" placeholder="exemple@correu.com" required />
+            <button type="submit" class="btn">Subscriu-me</button>
+          </form>
+        </div>
+      </section>
     </main>
 
-    <footer>
-
+    <!-- Peu de pàgina -->
+    <footer class="footer">
+      <div class="container">
+        <p>
+          &copy; <span id="any-actual"></span> Viatges pel Món |
+          <a href="./links.html">Fonts i atribucions</a>
+        </p>
+      </div>
     </footer>
-    <a class="skip-link" href="#main">Saltar al contingut principal</a>
-    <!-- contingut -->
-    <script type="module" src="./js/main.js"></script>
-</body>
+
+    <!-- Script principal -->
+    <script src="./js/main.js"></script>
+  </body>
 </html>

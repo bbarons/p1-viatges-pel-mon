@@ -1,25 +1,51 @@
-<!doctype html>
-<html lang="es">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Viatges pel Món — Links</title>
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kyoto, Japó - Viatges pel Món</title>
     <link rel="stylesheet" href="./styles/styles.scss">
-</head>
-<body>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Saltar al contingut</a>
+
     <header>
-
+      <h1>Kyoto, Japó</h1>
+      <nav>
+        <ul>
+          <li><a href="./index.html">Inici</a></li>
+          <li><a href="./categoria.html">Destinacions</a></li>
+          <li><a href="./links.html">Enllaços</a></li>
+        </ul>
+      </nav>
     </header>
-    
-    <main>
 
+    <main id="main">
+      <article>
+        <img src="./assets/images/kyoto-main.jpg" alt="Temple Kinkaku-ji envoltat de jardins verds" class="featured">
+        <h2>Tranquil·litat i tradició</h2>
+
+        <p>Kyoto, l’antiga capital del Japó, és un dels llocs més bells del món per gaudir de la cultura japonesa tradicional.</p>
+        <p>Entre temples, jardins zen i cases de te, Kyoto ofereix una experiència espiritual única per a qualsevol viatger.</p>
+        <p>La primavera, amb la floració dels cirerers, converteix la ciutat en un mar de color rosa i blanc.</p>
+
+        <div class="imatges">
+          <img src="./assets/images/kyoto-temple.jpg" alt="Temple Kiyomizu-dera">
+          <img src="./assets/images/kyoto-geisha.jpg" alt="Geisha passejant pel barri de Gion">
+          <img src="./assets/images/kyoto-bamboo.jpg" alt="Bosc de bambú d'Arashiyama">
+        </div>
+
+        <div class="video-wrap">
+            <iframe src="https://www.youtube.com/embed/6rgXWKjmvuY" title="KIOTO como NUNCA te lo han contado: Ruta PERFECTA de 3 días" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </article>
     </main>
 
     <footer>
-
+      <p>&copy; <span id="any-actual"></span> Viatges pel Món | <a href="./links.html">Fonts i atribucions</a></p>
     </footer>
-    <a class="skip-link" href="#main">Saltar al contingut principal</a>
-    <!-- contingut -->
-    <script type="module" src="./js/main.js"></script>
-</body>
+    
+    <!-- Script principal -->
+    <script src="./js/main.js"></script>
+  </body>
 </html>

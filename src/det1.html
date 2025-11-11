@@ -1,25 +1,51 @@
-<!doctype html>
-<html lang="es">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Viatges pel Món — Links</title>
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>París, França - Viatges pel Món</title>
     <link rel="stylesheet" href="./styles/styles.scss">
-</head>
-<body>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Saltar al contingut</a>
+
     <header>
-
+      <h1>París, França</h1>
+      <nav>
+        <ul>
+          <li><a href="./index.html">Inici</a></li>
+          <li><a href="./categoria.html">Destinacions</a></li>
+          <li><a href="./links.html">Enllaços</a></li>
+        </ul>
+      </nav>
     </header>
-    
-    <main>
 
+    <main id="main">
+      <article>
+        <img src="./assets/images/paris-main.jpg" alt="Vista panoràmica de París amb la Torre Eiffel" class="featured">
+        <h2>Una ciutat d’amor i cultura</h2>
+
+        <p>París és coneguda com la ciutat de la llum. Un destí imprescindible per als amants de l’art, la història i la bona cuina.</p>
+        <p>Des del Louvre fins a Notre-Dame, cada racó de París respira història i elegància. Els seus carrers plens de cafès conviden a perdre-s’hi sense pressa.</p>
+        <p>No et pots perdre un passeig pel Sena al capvespre, amb la Torre Eiffel il·luminada al fons: una experiència inoblidable.</p>
+
+        <div class="imatges">
+          <img src="./assets/images/paris-louvre.jpg" alt="Museu del Louvre">
+          <img src="./assets/images/paris-seine.jpg" alt="Riu Sena amb ponts de pedra">
+          <img src="./assets/images/paris-notredame.jpg" alt="Catedral de Notre-Dame">
+        </div>
+
+        <div class="video-wrap">
+            <iframe src="https://www.youtube.com/embed/EiYQ2xZaI2o" title="Qué ver en PARIS [actualización con precios]" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </article>
     </main>
 
     <footer>
-
+      <p>&copy; <span id="any-actual"></span> Viatges pel Món | <a href="./links.html">Fonts i atribucions</a></p>
     </footer>
-    <a class="skip-link" href="#main">Saltar al contingut principal</a>
-    <!-- contingut -->
-    <script type="module" src="./js/main.js"></script>
-</body>
+
+    <!-- Script principal -->
+    <script src="./js/main.js"></script>
+  </body>
 </html>
