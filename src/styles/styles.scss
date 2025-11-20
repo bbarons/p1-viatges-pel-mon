@@ -108,7 +108,7 @@ header {
 .hero {
   text-align: center;
   padding: 3rem 1.5rem;
-  background: linear-gradient(rgba(0, 0, 0, 0.45),rgba(0, 0, 0, 0.45)),url("../assets/images/portada.jpg") center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.45),rgba(0, 0, 0, 0.45)),url("../assets/images/portada.webp") center/cover no-repeat;
     
   color: $color-blanc;
   /* Animació de zoom */
@@ -480,9 +480,9 @@ footer {
     animation: fadeSlide 12s infinite;
   }
 
-  .slide1 { background-image: url("../assets/images/kyoto-bamboo.jpg"); animation-delay: 0s; opacity: 1; }
-  .slide2 { background-image: url("../assets/images/paris-louvre.jpg"); animation-delay: 4s; }
-  .slide3 { background-image: url("../assets/images/kyoto-temple.jpg"); animation-delay: 8s; }
+  .slide1 { background-image: url("../assets/images/kyoto-bamboo-335.webp"); animation-delay: 0s; opacity: 1; }
+  .slide2 { background-image: url("../assets/images/paris-louvre-335.webp"); animation-delay: 4s; }
+  .slide3 { background-image: url("../assets/images/kyoto-temple-335.webp"); animation-delay: 8s; }
 
   &::after {
     background-color: rgba(0,0,0,0.5);
