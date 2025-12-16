@@ -106,27 +106,44 @@ header {
    HERO / PORTADA
    ========================================================================== */
 .hero {
+  position: relative;
   text-align: center;
   padding: 3rem 1.5rem;
-  background: linear-gradient(rgba(0, 0, 0, 0.45),rgba(0, 0, 0, 0.45)),url("../assets/images/portada.webp") center/cover no-repeat;
-    
   color: $color-blanc;
-  /* Animació de zoom */
-  animation: zoomAnim 20s ease-in-out infinite alternate;
+  overflow: hidden;
+
+  /* Contenidor de la imatge amb clip-path animat */
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url("../assets/images/portada-670.webp") center/cover no-repeat;
+    z-index: -1;
+
+    /* Forma millorada */
+    clip-path: polygon(0% 15%, 0 0, 100% 0, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0% 85%);
+    animation: heroClipWave 12s ease-in-out infinite alternate;
+  }
 
   h2 {
     color: $color-blanc;
     font-size: 2rem;
     margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
   }
 
   p {
     max-width: 700px;
     margin: 0 auto 1.5rem auto;
     font-size: 1.1rem;
+    position: relative;
+    z-index: 1;
   }
 
   .btn {
+    position: relative;
+    z-index: 1;
     background-color: $color-secundari;
     color: $color-blanc;
     padding: 0.8rem 1.6rem;
@@ -137,6 +154,19 @@ header {
     &:hover {
       background-color: darken($color-secundari, 8%);
     }
+  }
+}
+
+/* Animació del clip-path */
+@keyframes heroClipWave {
+  0% {
+    clip-path: polygon(0% 15%, 0 0, 100% 0, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0% 85%);
+  }
+  50% {
+    clip-path: polygon(0% 10%, 0 0, 100% 0, 100% 10%, 100% 90%, 87% 100%, 13% 100%, 0% 90%);
+  }
+  100% {
+    clip-path: polygon(0% 20%, 0 0, 100% 0, 100% 20%, 100% 80%, 83% 100%, 17% 100%, 0% 80%);
   }
 }
 
@@ -409,6 +439,11 @@ footer {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    opacity: 0;
+    transform: translateY(20px);
+    animation: appear 0.6s forwards;
+    animation-delay: calc(var(--i) * 0.2s);
 
     &:hover {
       transform: translateY(-5px);
@@ -480,9 +515,9 @@ footer {
     animation: fadeSlide 12s infinite;
   }
 
-  .slide1 { background-image: url("../assets/images/kyoto-bamboo-335.webp"); animation-delay: 0s; opacity: 1; }
-  .slide2 { background-image: url("../assets/images/paris-louvre-335.webp"); animation-delay: 4s; }
-  .slide3 { background-image: url("../assets/images/kyoto-temple-335.webp"); animation-delay: 8s; }
+  .slide1 { background-image: url("../assets/images/kyoto-bamboo-1000.webp"); animation-delay: 0s; opacity: 1; }
+  .slide2 { background-image: url("../assets/images/paris-louvre-1000.webp"); animation-delay: 4s; }
+  .slide3 { background-image: url("../assets/images/kyoto-temple-1000.webp"); animation-delay: 8s; }
 
   &::after {
     background-color: rgba(0,0,0,0.5);
@@ -567,9 +602,13 @@ footer {
   article {
     padding: 1rem;
   }
-}
 
-@media (max-width: 768px) {
+  header nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
   .consells {
     padding: 3rem 1rem;
 
@@ -610,4 +649,35 @@ footer {
   25% { opacity: 1; }
   33% { opacity: 0; }
   100% { opacity: 0; }
+}
+
+/* Animació per fade in dels articles */
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animació svg index */
+#hero-svg {
+  display: block;
+  margin: 0 auto 1rem auto;
+  max-width: 260px;
+}
+
+#plane {
+  transform-origin: 0 0;
+  animation: planeMove 6s linear infinite;
+}
+
+@keyframes planeMove {
+  0%   { transform: translate(-40px,10px) rotate(-8deg); opacity: 0.9; }
+  30%  { transform: translate(20px,-8px) rotate(4deg); opacity: 1; }
+  60%  { transform: translate(80px,4px) rotate(0deg); opacity: 1; }
+  100% { transform: translate(180px,-10px) rotate(-6deg); opacity: 0.85; }
 }
