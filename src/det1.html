@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>París, França - Viatges pel Món</title>
-    <link rel="stylesheet" href="./styles/styles.scss">
+    <link rel="stylesheet" href="./styles/styles.scss" async>
   </head>
   <body>
     <a class="skip-link" href="#main">Saltar al contingut</a>
@@ -25,7 +25,7 @@
         <picture>
           <source srcset="./assets/images/paris-main-670.webp 600w, ./assets/images/paris-main-1000.webp 1000w" media="(max-width: 600px)">
           <source srcset="./assets/images/paris-main-1000.webp 1000w, ./assets/images/paris-main-1600.webp 1600w" media="(min-width: 601px)">
-          <img src="./assets/images/paris-main-1000.webp" alt="Temple Kinkaku-ji envoltat de jardins verds" class="featured">
+          <img loading="lazy" src="./assets/images/paris-main-1000.webp" alt="Temple Kinkaku-ji envoltat de jardins verds" class="featured">
         </picture>
 
         <h2>Una ciutat d’amor i cultura</h2>
@@ -51,6 +51,6 @@
     </footer>
 
     <!-- Script principal -->
-    <script src="./js/main.js"></script>
+    <script src="./js/main.js" async></script>
   </body>
 </html>
